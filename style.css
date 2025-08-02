@@ -1,0 +1,132 @@
+/* أضف هذا الكود إلى ملف style.css */
+@font-face {
+    font-family: 'Montaser Arabic';
+    src: url('montaser.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-montaser {
+    font-family: 'Montaser Arabic', sans-serif;
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+.dark body {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+.dark .bg-white {
+    background-color: #2d3748;
+}
+.dark .text-gray-800 {
+    color: #e2e8f0;
+}
+.dark .text-gray-600 {
+    color: #a0aec0;
+}
+.dark .border-gray-200 {
+    border-color: #4a5568;
+}
+.dark .bg-gray-100 {
+    background-color: #4a5568;
+}
+
+.modal-content {
+    transition: transform 0.3s ease-in-out;
+}
+.modal.visible .modal-content {
+    transform: scale(1);
+}
+
+.scrolling-text {
+    animation: scroll-left 20s linear infinite;
+}
+@keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+#scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+#scroll-to-top.show {
+    transform: scale(1);
+}
+
+/* تنسيقات الروبوت */
+#chatbot-box {
+    animation: fade-in 0.3s ease-in-out;
+}
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.message {
+    max-width: 80%;
+    word-wrap: break-word;
+}
+.from-bot {
+    align-self: flex-start;
+}
+.from-user {
+    align-self: flex-end;
+    background-color: #fbd38d; /* لون مميز لرسائل المستخدم */
+    color: #4a5568;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    border-top-left-radius: 0;
+}
+.dark .from-user {
+    background-color: #b7791f;
+    color: white;
+}
+
+/* تنسيقات خاصة بالمنتجات */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+}
+.product-image-container img.product-main-image {
+    transition: opacity 0.3s ease-in-out;
+}
+.product-image-container:hover img.product-hover-image {
+    opacity: 1 !important;
+}
+
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 9999px;
+    z-index: 10;
+}
+.new-badge {
+    background-color: #38a169;
+}
+.sale-badge {
+    background-color: #e53e3e;
+}
+.sold-out-badge {
+    background-color: #4a5568;
+    right: auto;
+    left: 1rem;
+}
