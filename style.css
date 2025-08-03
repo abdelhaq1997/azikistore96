@@ -177,3 +177,46 @@ body {
     border-color: #4a5568;
     color: #e2e8f0;
 }
+
+/* تحسينات الأكورديون (Smooth Accordion) */
+.accordion-content {
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+.accordion-item.active .accordion-content {
+    max-height: 200px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.accordion-item.active .accordion-header i {
+    transform: rotate(180deg);
+}
+
+/* تحسينات التبويبات (Tabs) */
+.tab-btn {
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f59e0b;
+    transition: width 0.3s ease-in-out;
+}
+.tab-btn.active-tab::after {
+    width: 100%;
+}
+/* تعديلات قائمة الموبايل لتظهر بسلاسة */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+#mobile-menu.mobile-menu-visible {
+    max-height: 500px; /* قيمة كبيرة بما يكفي لاستيعاب محتوى القائمة */
+}
