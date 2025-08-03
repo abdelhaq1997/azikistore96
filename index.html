@@ -13,6 +13,9 @@
     <meta property="og:title" content="AzikiStore - متجر العطور الفاخرة">
     <meta property="og:description" content="أفخم العطور العربية">
     <meta property="og:type" content="website">
+
+    <meta name="theme-color" content="#4a5568">
+    <link rel="manifest" href="/manifest.json">
     
     </head>
 <body class="bg-gray-500 text-gray-800 font-montaser">
@@ -30,24 +33,24 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <div data-page="home" class="flex items-center cursor-pointer">
-                        <img src="./images/logo.png" alt="AzikiStore Logo" class="h-20 w-20 rounded-full ml-2">
-                        <span class="font-serif text-3xl font-bold text-amber-900 logo-text hover:text-amber-700 transition-colors dark:text-amber-500">
+                        <img src="./images/logo.png" alt="AzikiStore Logo" class="h-12 w-12 md:h-20 md:w-20 rounded-full ml-2">
+                        <span class="font-serif text-xl md:text-3xl font-bold text-amber-900 logo-text hover:text-amber-700 transition-colors dark:text-amber-500">
                             AzikiStore
                         </span>
                     </div>
                 </div>
                 
-                <nav class="hidden md:flex space-x-8" id="nav-menu">
-                    <button data-page="home" class="nav-btn text-lg font-medium hover:text-amber-700 transition-all duration-300 border-b-2 border-transparent hover:border-amber-700 dark:hover:text-amber-500">
+                <nav class="hidden md:flex space-x-4" id="nav-menu">
+                    <button data-page="home" class="nav-btn text-lg font-medium hover:text-amber-700 transition-all duration-300 border-b-2 border-transparent hover:border-amber-700 dark:hover:text-amber-500 ml-4">
                         الرئيسية
                     </button>
-                    <button data-page="shop" class="nav-btn text-lg font-medium hover:text-amber-700 transition-all duration-300 border-b-2 border-transparent hover:border-amber-700 dark:hover:text-amber-500">
+                    <button data-page="shop" class="nav-btn text-lg font-medium hover:text-amber-700 transition-all duration-300 border-b-2 border-transparent hover:border-amber-700 dark:hover:text-amber-500 ml-4">
                         المتجر
                     </button>
-                    <button data-page="about" class="nav-btn text-lg font-medium hover:text-amber-700 transition-all duration-300 border-b-2 border-transparent hover:border-amber-700 dark:hover:text-amber-500">
+                    <button data-page="about" class="nav-btn text-lg font-medium hover:text-amber-700 transition-all duration-300 border-b-2 border-transparent hover:border-amber-700 dark:hover:text-amber-500 ml-4">
                         من نحن
                     </button>
-                    <button data-page="faq" class="nav-btn text-lg font-medium hover:text-amber-700 transition-all duration-300 border-b-2 border-transparent hover:border-amber-700 dark:hover:text-amber-500">
+                    <button data-page="faq" class="nav-btn text-lg font-medium hover:text-amber-700 transition-all duration-300 border-b-2 border-transparent hover:border-amber-700 dark:hover:text-amber-500 ml-4">
                         الأسئلة الشائعة
                     </button>
                 </nav>
@@ -65,11 +68,6 @@
                     <button id="wishlist-button" class="relative p-2 rounded-full hover:bg-gray-100 transition-colors dark:hover:bg-gray-700" aria-label="قائمة المفضلة">
                         <i class="fas fa-heart text-gray-800 text-xl dark:text-white"></i>
                         <span id="wishlist-count" class="absolute -top-1 -right-1 flex items-center justify-center h-6 w-6 rounded-full bg-red-500 text-xs text-white font-bold transform scale-0 transition-transform">0</span>
-                    </button>
-                    
-                    <button id="cart-button" class="relative p-2 rounded-full hover:bg-gray-100 transition-colors dark:hover:bg-gray-700" aria-label="السلة">
-                        <i class="fas fa-shopping-cart text-gray-800 text-xl dark:text-white"></i>
-                        <span id="cart-count" class="absolute -top-1 -right-1 flex items-center justify-center h-6 w-6 rounded-full bg-amber-700 text-xs text-white font-bold transform scale-0 transition-transform">0</span>
                     </button>
                     
                     <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-full hover:bg-gray-100 transition-colors dark:hover:bg-gray-700" aria-label="القائمة">
@@ -151,15 +149,7 @@
                     </div>
                 </div>
                 
-                <div>
-                    <h4 class="text-white font-semibold text-lg mb-4">النشرة الإخبارية</h4>
-                    <p class="text-sm mb-4">اشترك للحصول على أحدث العروض</p>
-                    <div class="flex">
-                        <input type="email" placeholder="البريد الإلكتروني" class="flex-1 p-2 rounded-r-lg text-gray-800 text-sm dark:bg-gray-700 dark:text-white">
-                        <button class="bg-amber-700 text-white p-2 rounded-l-lg hover:bg-amber-600 transition-colors">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
+                <div class="md:col-span-1">
                     <div class="mt-4">
                         <h4 class="text-white font-semibold text-lg mb-2">اقتراحاتكم</h4>
                         <textarea id="suggestions-box" class="w-full p-2 border rounded-md text-sm text-gray-800 dark:bg-gray-700 dark:text-white" rows="3" placeholder="اكتب اقتراحك أو طلبك هنا..."></textarea>
