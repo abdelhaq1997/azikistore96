@@ -157,7 +157,7 @@ const products = [
     }
 ];
 
-// بيانات الأسئلة الشائعة
+// بيانات الأسئلة الشائعة (تمت إعادة الأجوبة)
 const faqs = [
     { question: "ما هي طرق الدفع المتاحة؟", answer: "نوفر حالياً خيار الدفع عند الاستلام فقط لضمان راحتكم." },
     { question: "كم تستغرق مدة الشحن؟", answer: "تتراوح مدة الشحن داخل المغرب بين 2-5 أيام عمل." },
@@ -173,7 +173,7 @@ const heroImages = [
 
 // المتغيرات الرئيسية
 let currentPage = 'home';
-let cart = []; 
+let cart = [];
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 let productsToCompare = [];
 let selectedProduct = null;
@@ -285,22 +285,7 @@ function toggleWishlist(product) {
     renderPage();
 }
 
-function createStarRating(rating) {
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-    let starsHtml = '';
-    for (let i = 0; i < fullStars; i++) {
-        starsHtml += `<i class="fas fa-star text-amber-500"></i>`;
-    }
-    if (hasHalfStar) {
-        starsHtml += `<i class="fas fa-star-half-alt text-amber-500"></i>`;
-    }
-    for (let i = 0; i < emptyStars; i++) {
-        starsHtml += `<i class="far fa-star text-amber-500 dark:text-gray-400"></i>`;
-    }
-    return starsHtml;
-}
+// تم حذف وظائف التقييم
 
 function createProductCard(p) {
     const isWished = wishlist.some(item => item.id === p.id);
@@ -432,10 +417,6 @@ function renderPage() {
             case 'search':
                 pageContent.innerHTML = renderSearchResultsPage(searchResults);
                 break;
-            case 'faq':
-                pageContent.innerHTML = renderFaqPage();
-                attachAccordionEventListeners();
-                break;
             default:
                 pageContent.innerHTML = renderHomepage();
                 break;
@@ -447,9 +428,6 @@ function renderPage() {
 // دالة الواجهة الرئيسية
 function renderHomepage() {
     const bestsellers = products.filter(p => p.bestseller);
-    const topReviews = products.flatMap(p => p.reviews ? p.reviews.map(r => ({ ...r, product: p.name_ar, rating: p.rating })) : [])
-        .sort((a, b) => b.rating - a.rating)
-        .slice(0, 3);
     
     return `
         <section class="relative h-[80vh] flex items-center justify-center text-white hero-slider">
@@ -457,7 +435,7 @@ function renderHomepage() {
                 <div class="hero-slide h-full w-full ${index === 0 ? 'active' : ''}" style="background-image: url('${img}');"></div>
             `).join('')}
             <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-amber-500 mb-4 animate-fade-in-up">
+                <h1 class="text-2xl md:text-6xl font-extrabold text-amber-500 mb-4 animate-fade-in-up">
                     اكتشف أناقة العطور الفاخرة
                 </h1>
                 <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl animate-fade-in-up delay-1">
@@ -476,33 +454,16 @@ function renderHomepage() {
 
         <section class="py-16 bg-white dark:bg-gray-800">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 dark:text-white">الأكثر مبيعاً</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-12 dark:text-white">الأكثر مبيعاً</h2>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                     ${bestsellers.map(p => createProductCard(p)).join('')}
                 </div>
             </div>
         </section>
         
-        <section class="py-16 bg-gray-100 dark:bg-gray-700">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 dark:text-white">آراء العملاء</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    ${topReviews.map(review => `
-                        <div class="bg-white p-6 rounded-xl shadow-lg dark:bg-gray-800">
-                            <div class="flex items-center mb-4">
-                                <span class="font-bold text-lg dark:text-white">${review.user}</span>
-                            </div>
-                            <p class="text-gray-600 italic mb-4 dark:text-gray-300">"${review.text}"</p>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">- عن منتج: ${review.product}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        </section>
-
         <section class="py-16 bg-gray-900 text-white dark:bg-gray-900">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-4">قصتنا</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-amber-500 mb-4">قصتنا</h2>
                 <p class="text-lg mb-8 max-w-3xl mx-auto">
                     في AzikiStore، نؤمن بأن العطور ليست مجرد منتجات، بل هي تعبير عن الهوية والأناقة.
                     نقدم لك تشكيلة فاخرة تجمع بين الأصالة العربية والحداثة، لتمنحك لمسة من الفخامة التي تستحقها.
@@ -547,7 +508,7 @@ function renderShopPage() {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">منتجاتنا</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">منتجاتنا</h2>
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 mb-8">
                     ${filtersHtml}
                     <div class="flex items-center space-x-2">
@@ -559,7 +520,7 @@ function renderShopPage() {
                         </select>
                     </div>
                 </div>
-                <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div id="product-list" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                     ${filteredProducts.map(p => createProductCard(p)).join('')}
                 </div>
             </div>
@@ -576,8 +537,8 @@ function renderSearchResultsPage(results) {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">نتائج البحث</h2>
-                <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">نتائج البحث</h2>
+                <div id="product-list" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                     ${resultsHtml}
                 </div>
             </div>
@@ -629,7 +590,7 @@ function renderProductPage(product) {
                         </div>
                     </div>
                     <div class="md:w-1/2 mt-8 md:mt-0 product-detail-box bg-white p-6 rounded-xl shadow-lg dark:bg-gray-700">
-                        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 dark:text-white">${product.name_ar}</h1>
+                        <h1 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2 dark:text-white">${product.name_ar}</h1>
                          <p class="text-3xl font-bold text-amber-700 mb-6 dark:text-amber-500">${product.price.toFixed(2)} درهم</p>
                         
                         ${limitedStockHtml}
@@ -691,7 +652,7 @@ function renderCheckoutPage() {
         return `
             <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
                 <div class="container mx-auto px-4 text-center max-w-3xl">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 dark:text-white">لا يوجد منتج لإتمام الطلب.</h2>
+                    <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-4 dark:text-white">لا يوجد منتج لإتمام الطلب.</h2>
                     <p class="text-lg text-gray-600 mb-8 dark:text-gray-300">الرجاء اختيار منتج من المتجر أولاً.</p>
                     <button data-page="shop" class="mt-4 bg-amber-700 text-white font-bold py-3 px-8 rounded-full hover:bg-amber-600 transition-colors">
                         العودة للمتجر
@@ -712,7 +673,7 @@ function renderCheckoutPage() {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4 max-w-3xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">إتمام الطلب</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">إتمام الطلب</h2>
                 
                 <div class="flex justify-between items-center mb-8">
                     <div class="text-center flex-1">
@@ -756,10 +717,6 @@ function renderCheckoutPage() {
                             <label for="checkout-address" class="block text-gray-700 font-semibold mb-2 dark:text-white">العنوان</label>
                             <textarea id="checkout-address" rows="3" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 dark:bg-gray-600 dark:text-white dark:border-gray-500" required></textarea>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <input type="checkbox" id="cod-checkbox" checked disabled class="h-5 w-5 text-amber-700 rounded border-gray-300 focus:ring-amber-500">
-                            <label for="cod-checkbox" class="text-gray-700 font-semibold dark:text-white">الدفع عند الاستلام</label>
-                        </div>
                         <div class="text-center mt-8">
                                 <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">يمكنك تقسيط مبلغ الفاتورة عند استلام الطلب.</p>
                             <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-2">الإجمالي النهائي: ${finalTotal.toFixed(2)} درهم</h4>
@@ -790,8 +747,8 @@ function renderWishlistPage() {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">قائمة المفضلة</h2>
-                <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">قائمة المفضلة</h2>
+                <div id="product-list" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                     ${wishlistHtml}
                 </div>
             </div>
@@ -805,7 +762,7 @@ function renderComparePage() {
         return `
             <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
                 <div class="container mx-auto px-4 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">مقارنة المنتجات</h2>
+                    <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">مقارنة المنتجات</h2>
                     <p class="text-lg text-gray-600 dark:text-gray-400">الرجاء اختيار منتجين أو أكثر للمقارنة.</p>
                 </div>
             </div>
@@ -818,7 +775,7 @@ function renderComparePage() {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">مقارنة المنتجات</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">مقارنة المنتجات</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-white p-6 rounded-xl shadow-lg dark:bg-gray-700">
                         <img src="${firstProduct.images[0]}" alt="${firstProduct.name_ar}" class="w-full h-64 object-cover rounded-md mb-4">
@@ -852,7 +809,7 @@ function renderAboutPage() {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4 text-center max-w-3xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">من نحن</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">من نحن</h2>
                 <p class="text-lg text-gray-600 mb-8 dark:text-gray-300">
                     مرحباً بك في AzikiStore، حيث تلتقي الأصالة العربية بالفخامة العصرية.
                     نحن متخصصون في تقديم أفخم العطور الشرقية والساعات الرجالية والنسائية الأنيقة،
@@ -875,7 +832,7 @@ function renderPrivacyPage() {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">سياسة الخصوصية</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">سياسة الخصوصية</h2>
                 <div class="prose max-w-none text-right dark:text-gray-300">
                     <p>في AzikiStore، خصوصية زوارنا ومستخدمينا لها أهمية قصوى. تهدف هذه السياسة إلى توضيح أنواع المعلومات الشخصية التي يتم جمعها وكيفية استخدامها.</p>
                     <h3 class="mt-6 text-xl font-semibold dark:text-white">1. المعلومات التي نجمعها</h3>
@@ -904,7 +861,7 @@ function renderTermsPage() {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">شروط الاستخدام</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">شروط الاستخدام</h2>
                 <div class="prose max-w-none text-right dark:text-gray-300">
                     <p>مرحباً بك في AzikiStore. باستخدامك لموقعنا، فإنك توافق على الشروط والأحكام التالية:</p>
                     <h3 class="mt-6 text-xl font-semibold dark:text-white">1. استخدام الموقع</h3>
@@ -924,7 +881,7 @@ function renderContactPage() {
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4 text-center max-w-2xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">اتصل بنا</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 dark:text-white">اتصل بنا</h2>
                 <p class="text-lg text-gray-600 mb-8 dark:text-gray-300">
                     نحن هنا للإجابة على استفساراتكم ومساعدتكم. يمكنكم التواصل معنا عبر النموذج التالي،
                     أو عبر أرقامنا ووسائل التواصل الاجتماعي.
@@ -951,29 +908,7 @@ function renderContactPage() {
     `;
 }
 
-// دالة صفحة الأسئلة الشائعة
-function renderFaqPage() {
-    return `
-        <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
-            <div class="container mx-auto px-4 max-w-3xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">الأسئلة الشائعة</h2>
-                <div class="space-y-4">
-                    ${faqs.map(faq => `
-                        <div class="bg-gray-100 p-6 rounded-xl shadow accordion-item dark:bg-gray-700">
-                            <div class="flex justify-between items-center cursor-pointer accordion-header">
-                                <h3 class="text-lg font-bold text-gray-800 dark:text-white">${faq.question}</h3>
-                                <i class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-                            </div>
-                            <div class="accordion-content mt-4 hidden">
-                                <p class="text-gray-600 dark:text-gray-300">${faq.answer}</p>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        </div>
-    `;
-}
+// تم حذف دالة renderFaqPage()
 
 function attachAccordionEventListeners() {
     document.querySelectorAll('.accordion-header').forEach(header => {
