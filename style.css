@@ -12,6 +12,12 @@
 
 body {
     transition: background-color 0.3s, color 0.3s;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
 }
 .dark body {
     background-color: #1a202c;
@@ -75,7 +81,7 @@ body {
 }
 .from-user {
     align-self: flex-end;
-    background-color: #fbd38d; /* لون مميز لرسائل المستخدم */
+    background-color: #fbd38d;
     color: #4a5568;
     border-radius: 0.5rem;
     padding: 0.75rem;
@@ -99,7 +105,6 @@ body {
 
 .product-image-container {
     position: relative;
-    overflow: hidden;
 }
 .product-image-container img.product-main-image {
     transition: opacity 0.3s ease-in-out;
@@ -129,4 +134,46 @@ body {
     background-color: #4a5568;
     right: auto;
     left: 1rem;
+}
+.limited-stock-badge {
+    background-color: #f6ad55;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* تنسيقات الاستبيان */
+#perfume-quiz-modal .modal-content {
+    max-width: 600px;
+}
+.quiz-options button {
+    transition: background-color 0.3s;
+}
+.quiz-options button.selected {
+    background-color: #b7791f;
+    color: white;
+}
+/* تنسيق شريط البحث في FAQ */
+#faq-search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 1rem;
+    text-align: right;
+    direction: rtl;
+    background-color: #f7fafc;
+    color: #2d3748;
+    box-sizing: border-box;
+}
+.dark #faq-search-input {
+    background-color: #4a5568;
+    border-color: #4a5568;
+    color: #e2e8f0;
 }
