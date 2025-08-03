@@ -21,7 +21,9 @@ const products = [
         materials: ["عود", "عنبر", "فانيليا"],
         sku: "PER-001",
         isNew: true,
-        onSale: true
+        onSale: true,
+        mood: 'مسائي',
+        occasion: 'رسمي'
     },
     {
         id: 2,
@@ -42,49 +44,9 @@ const products = [
         materials: ["مسك", "ورد", "ياسمين"],
         sku: "PER-002",
         isNew: false,
-        onSale: false
-    },
-    {
-        id: 3,
-        name_ar: "ساعة أزيكي الكلاسيكية",
-        type: 'watch',
-        price: 299.00,
-        images: ['./images/watch1.jpg', './images/images.jpeg'],
-        colors: ['فضي', 'ذهبي'],
-        description_ar: "ساعة رجالية أنيقة بتصميم كلاسيكي، مصنوعة من الفولاذ المقاوم للصدأ ومزودة بحزام جلدي فاخر.",
-        quote: "والوقت في الحب لا وقت له، فالساعة كالدقيقة والثانية كالدهر.",
-        bestseller: true,
-        rating: 4.9,
-        reviews: [
-            { user: "حسن", text: "ساعة فاخرة ومصنوعة بجودة عالية. تفاصيلها مذهلة.", rating: 5 },
-            { user: "إبراهيم", text: "أعجبتني كثيراً، تصميم كلاسيكي لا يمل منه.", rating: 4.5 }
-        ],
-        stock: 0,
-        materials: ["فولاذ مقاوم للصدأ", "جلد طبيعي", "زجاج كريستال"],
-        sku: "WAT-001",
-        isNew: false,
-        onSale: false
-    },
-    {
-        id: 4,
-        name_ar: "ساعة أزيكي النسائية الأنيقة",
-        type: 'watch',
-        price: 249.00,
-        images: ['./images/watch2.jpeg', './images/asad2.webp'],
-        colors: ['وردي', 'أسود'],
-        description_ar: "ساعة نسائية فاخرة بتصميم رقيق وعصري، مرصعة بالكريستال اللامع ومناسبة لكل المناسبات.",
-        quote: "إنّما الأوقاتُ والأعمارُ عندَ كلِّ قومٍ ساعاتٌ وساعاتُ.",
-        bestseller: false,
-        rating: 4.5,
-        reviews: [
-            { user: "مريم", text: "ساعة جميلة وأنيقة. السعر مناسب للجودة.", rating: 5 },
-            { user: "علي", text: "تصميمها جذاب جداً، أنصح بها كهدية.", rating: 4.5 }
-        ],
-        stock: 20,
-        materials: ["فولاذ مقاوم للصدأ", "كريستال"],
-        sku: "WAT-002",
-        isNew: false,
-        onSale: false
+        onSale: false,
+        mood: 'يومي',
+        occasion: 'نهاري'
     },
     {
         id: 5,
@@ -102,7 +64,9 @@ const products = [
         materials: ["أخشاب", "بهارات دافئة", "مسك"],
         sku: "PER-003",
         isNew: true,
-        onSale: false
+        onSale: false,
+        mood: 'جريء',
+        occasion: 'رسمي'
     },
     {
         id: 6,
@@ -121,7 +85,9 @@ const products = [
         materials: ["عود", "ورد دمشقي", "عنبر"],
         sku: "PER-004",
         isNew: false,
-        onSale: true
+        onSale: true,
+        mood: 'ملكي',
+        occasion: 'سهرة'
     },
     {
         id: 7,
@@ -139,7 +105,9 @@ const products = [
         materials: ["عود", "توابل", "بخور"],
         sku: "PER-005",
         isNew: false,
-        onSale: false
+        onSale: false,
+        mood: 'غامض',
+        occasion: 'سهرة'
     },
     {
         id: 8,
@@ -157,7 +125,9 @@ const products = [
         materials: ["عود", "باتشولي", "فانيليا"],
         sku: "PER-006",
         isNew: false,
-        onSale: false
+        onSale: false,
+        mood: 'واثق',
+        occasion: 'رسمي'
     },
     {
         id: 9,
@@ -167,7 +137,7 @@ const products = [
         images: ['./images/تاج الملك.webp', './images/فخر العود.webp'],
         colors: ['أسود', 'ذهبي'],
         description_ar: "عطر يمنحك شعوراً بالفخامة والسلطة. مزيج فريد من العود وخشب الصندل. ثباته يدوم طويلاً ليترك أثراً في كل مكان.",
-        quote: "التاجُ لا يوضعُ إلا على رأسٍ حرٍّ، وهذا العطر هو تاجُك.",
+        quote: "التاجُ لا يوضعُ إلا على رأسٍ حرٍّ، وهذا العطر هو تاجُك.",
         bestseller: false,
         rating: 4.6,
         reviews: [{ user: "مريم", text: "عطر قوي ومميز، ثابت لأكثر من 12 ساعة.", rating: 5 }],
@@ -175,7 +145,9 @@ const products = [
         materials: ["عود", "خشب الصندل", "توابل"],
         sku: "PER-007",
         isNew: false,
-        onSale: false
+        onSale: false,
+        mood: 'فخم',
+        occasion: 'سهرة'
     },
     {
         id: 10,
@@ -193,7 +165,9 @@ const products = [
         materials: ["عود", "أزهار", "مسك"],
         sku: "PER-008",
         isNew: false,
-        onSale: false
+        onSale: false,
+        mood: 'هادئ',
+        occasion: 'يومي'
     },
     {
         id: 11,
@@ -211,7 +185,9 @@ const products = [
         materials: ["عود", "جلد", "أخشاب"],
         sku: "PER-009",
         isNew: true,
-        onSale: false
+        onSale: false,
+        mood: 'قوي',
+        occasion: 'مسائي'
     }
 ];
 
@@ -226,7 +202,6 @@ const faqs = [
 // روابط صور السلايدر
 const heroImages = [
     './images/khamrah.jpg',
-    './images/watch1.jpg',
     './images/ihsas.webp'
 ];
 
@@ -400,6 +375,8 @@ function createProductCard(p) {
         badgeHtml = `<span class="product-badge sale-badge">عرض</span>`;
     } else if (p.stock === 0) {
         badgeHtml = `<span class="product-badge sold-out-badge">نفد المخزون</span>`;
+    } else if (p.stock > 0 && p.stock <= 5) { // خاصية جديدة: تنبيه المخزون المحدود
+        badgeHtml = `<span class="product-badge limited-stock-badge">الكمية محدودة</span>`;
     }
 
     const priceHtml = p.old_price ? 
@@ -408,7 +385,7 @@ function createProductCard(p) {
         : `<p class="text-amber-700 text-lg font-bold dark:text-amber-500">${p.price.toFixed(2)} درهم</p>`;
 
     return `
-        <div data-id="${p.id}" class="product-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer dark:bg-gray-700 dark:hover:shadow-xl relative group">
+        <div data-id="${p.id}" class="product-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer relative group">
             ${badgeHtml}
             <div class="product-image-container">
                 <img src="${p.images[0]}" alt="${p.name_ar}" class="w-full h-72 object-cover product-main-image" data-action="view-product" data-id="${p.id}" />
@@ -502,6 +479,12 @@ function renderPage() {
             case 'product':
                 if (selectedProduct) {
                     pageContent.innerHTML = renderProductPage(selectedProduct);
+                    const mainProductImage = document.getElementById('main-product-image');
+                    document.querySelectorAll('.thumbnail-img').forEach(thumbnail => {
+                        thumbnail.addEventListener('mouseover', () => {
+                            mainProductImage.src = thumbnail.dataset.src;
+                        });
+                    });
                 }
                 break;
             case 'cart':
@@ -557,10 +540,10 @@ function renderHomepage() {
             `).join('')}
             <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-amber-500 mb-4 animate-fade-in-up">
-                    اكتشف أناقة العطور والساعات
+                    اكتشف أناقة العطور الفاخرة
                 </h1>
                 <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl animate-fade-in-up delay-1">
-                    أفخم العطور العربية والساعات الأنيقة بجودة لا مثيل لها
+                    أفخم العطور العربية بجودة لا مثيل لها
                 </p>
                 <div class="flex space-x-4 mb-8 justify-center">
                     <button data-page="shop" class="bg-amber-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-amber-600 transition-colors animate-fade-in-up delay-2">تسوق الآن</button>
@@ -568,7 +551,7 @@ function renderHomepage() {
                  <div class="mt-8 text-center bg-black/50 p-4 rounded-xl max-w-sm mx-auto">
                     <p class="text-xl font-bold mb-2 text-amber-500">خصم 10% ينتهي خلال:</p>
                     <div id="countdown-timer" class="countdown-timer flex justify-center space-x-2">
-                        </div>
+                         </div>
                 </div>
             </div>
         </section>
@@ -606,7 +589,7 @@ function renderHomepage() {
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-amber-500 mb-4">قصتنا</h2>
                 <p class="text-lg mb-8 max-w-3xl mx-auto">
-                    في AzikiStore، نؤمن بأن العطور والساعات ليست مجرد منتجات، بل هي تعبير عن الهوية والأناقة.
+                    في AzikiStore، نؤمن بأن العطور ليست مجرد منتجات، بل هي تعبير عن الهوية والأناقة.
                     نقدم لك تشكيلة فاخرة تجمع بين الأصالة العربية والحداثة، لتمنحك لمسة من الفخامة التي تستحقها.
                 </p>
                 <button data-page="about" class="text-amber-500 hover:text-amber-400 font-semibold transition-colors">
@@ -620,7 +603,7 @@ function renderHomepage() {
 
 // دالة صفحة المتجر
 function renderShopPage() {
-    let filteredProducts = products.filter(p => activeFilter === 'all' || p.type === activeFilter);
+    let filteredProducts = products.filter(p => activeFilter === 'all' || p.type === activeFilter || p.mood === activeFilter || p.occasion === activeFilter);
     const sortValue = localStorage.getItem('sortBy') || 'default';
     
     if (sortValue === 'price-asc') {
@@ -631,22 +614,29 @@ function renderShopPage() {
         filteredProducts.sort((a, b) => b.rating - a.rating);
     }
 
+    const moods = [...new Set(products.map(p => p.mood).filter(Boolean))];
+    const occasions = [...new Set(products.map(p => p.occasion).filter(Boolean))];
+    const allFilters = [...new Set([...moods, ...occasions])];
+
+    const filtersHtml = `
+        <div class="flex space-x-4 flex-wrap gap-2">
+            <button data-action="filter" data-filter="all" class="filter-btn py-2 px-4 rounded-full font-semibold transition-colors ${activeFilter === 'all' ? 'bg-amber-700 text-white' : 'bg-gray-200 text-gray-700 hover:bg-amber-100'} dark:bg-gray-700 dark:text-white dark:hover:bg-amber-500 dark:hover:text-white">
+                الكل
+            </button>
+            ${allFilters.map(filter => `
+                <button data-action="filter" data-filter="${filter}" class="filter-btn py-2 px-4 rounded-full font-semibold transition-colors ${activeFilter === filter ? 'bg-amber-700 text-white' : 'bg-gray-200 text-gray-700 hover:bg-amber-100'} dark:bg-gray-700 dark:text-white dark:hover:bg-amber-500 dark:hover:text-white">
+                    ${filter}
+                </button>
+            `).join('')}
+        </div>
+    `;
+
     return `
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">منتجاتنا</h2>
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 mb-8">
-                    <div class="flex space-x-4">
-                        <button data-action="filter" data-filter="all" class="filter-btn py-2 px-4 rounded-full font-semibold transition-colors ${activeFilter === 'all' ? 'bg-amber-700 text-white' : 'bg-gray-200 text-gray-700 hover:bg-amber-100'} dark:bg-gray-700 dark:text-white dark:hover:bg-amber-500 dark:hover:text-white">
-                            الكل
-                        </button>
-                        <button data-action="filter" data-filter="perfume" class="filter-btn py-2 px-4 rounded-full font-semibold transition-colors ${activeFilter === 'perfume' ? 'bg-amber-700 text-white' : 'bg-gray-200 text-gray-700 hover:bg-amber-100'} dark:bg-gray-700 dark:text-white dark:hover:bg-amber-500 dark:hover:text-white">
-                            عطور
-                        </button>
-                        <button data-action="filter" data-filter="watch" class="filter-btn py-2 px-4 rounded-full font-semibold transition-colors ${activeFilter === 'watch' ? 'bg-amber-700 text-white' : 'bg-gray-200 text-gray-700 hover:bg-amber-100'} dark:bg-gray-700 dark:text-white dark:hover:bg-amber-500 dark:hover:text-white">
-                            ساعات
-                        </button>
-                    </div>
+                    ${filtersHtml}
                     <div class="flex items-center space-x-2">
                         <label for="sort-by" class="text-gray-600 dark:text-gray-300">الترتيب حسب:</label>
                         <select id="sort-by" class="p-2 border rounded-md dark:bg-gray-700 dark:text-white">
@@ -723,7 +713,7 @@ function renderProductPage(product) {
 
     const qualityHtml = product.materials ? `
         <ul class="list-disc list-inside text-gray-600 dark:text-gray-300">
-            ${product.materials.map(material => `<li><i class="fas fa-check-circle text-green-500 ml-2"></i>${material}</li>`).join('')}
+            ${product.materials.map(material => `<li>${material}</li>`).join('')}
         </ul>
     ` : '';
     
@@ -939,22 +929,35 @@ function renderCheckoutPage() {
         <div class="pt-24 pb-12 bg-white min-h-screen dark:bg-gray-800">
             <div class="container mx-auto px-4 max-w-3xl">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 dark:text-white">إتمام الطلب</h2>
-                <div class="bg-white p-8 rounded-xl shadow-lg dark:bg-gray-700">
-                    <div class="flex justify-between items-center mb-8 border-b-2 pb-4 dark:border-gray-600">
-                        <div class="text-center flex-1">
-                            <i class="fas fa-shopping-cart text-amber-700 text-2xl"></i>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">1. عربة التسوق</p>
+                
+                <div class="flex justify-between items-center mb-8">
+                    <div class="text-center flex-1">
+                        <div class="w-10 h-10 mx-auto rounded-full text-lg text-white flex items-center justify-center bg-amber-700">
+                            <i class="fas fa-check w-full"></i>
                         </div>
-                        <div class="text-center flex-1">
-                            <i class="fas fa-truck text-amber-700 text-2xl"></i>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">2. معلومات الشحن</p>
-                        </div>
-                        <div class="text-center flex-1">
-                            <i class="fas fa-check-circle text-gray-400 text-2xl"></i>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">3. تأكيد الطلب</p>
-                        </div>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-semibold">1. عربة التسوق</p>
                     </div>
+                    <div class="w-1/4 align-middle items-center text-center">
+                        <div class="w-full h-1 rounded bg-amber-700"></div>
+                    </div>
+                    <div class="text-center flex-1">
+                        <div class="w-10 h-10 mx-auto rounded-full text-lg text-white flex items-center justify-center bg-amber-700">
+                            <i class="fas fa-truck w-full"></i>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-semibold">2. معلومات الشحن</p>
+                    </div>
+                    <div class="w-1/4 align-middle items-center text-center">
+                        <div class="w-full h-1 rounded bg-gray-300"></div>
+                    </div>
+                    <div class="text-center flex-1">
+                        <div class="w-10 h-10 mx-auto rounded-full text-lg text-white flex items-center justify-center bg-gray-400">
+                            <i class="fas fa-check w-full"></i>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">3. تأكيد الطلب</p>
+                    </div>
+                </div>
 
+                <div class="bg-white p-8 rounded-xl shadow-lg dark:bg-gray-700">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4 dark:text-white">معلومات الشحن</h3>
                     <form id="checkout-form" class="space-y-6 text-right">
                         <div>
@@ -976,7 +979,7 @@ function renderCheckoutPage() {
                         <div class="text-center mt-8">
                              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">يمكنك تقسيط مبلغ الفاتورة عند استلام الطلب.</p>
                             <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-2">الإجمالي النهائي: ${finalTotal.toFixed(2)} درهم</h4>
-                            <button type="submit" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-full shadow-lg hover:bg-emerald-500 transition-colors flex items-center justify-center">
+                            <button type="submit" data-action="checkout-whatsapp" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-full shadow-lg hover:bg-emerald-500 transition-colors flex items-center justify-center">
                                 <i class="fab fa-whatsapp ml-2"></i>
                                 تأكيد الطلب عبر واتساب
                             </button>
@@ -1327,7 +1330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateWishlistCount();
     renderPage();
     if (localStorage.getItem('wheel-spun') !== 'true') {
-         setTimeout(showLuckyWheel, 5000); 
+          setTimeout(showLuckyWheel, 5000); 
     }
 
     const savedTheme = localStorage.getItem('theme');
@@ -1359,7 +1362,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (cart.length > 0 && localStorage.getItem('cartReminderShown') !== 'true') {
-        showMessage(`مرحباً بعودتك يا ${userName}! لديك ${cart.length} منتجات في سلة الشراء بانتظارك.`);
+        showMessage(`مرحباً بعودتك يا ${userName}! لديك ${cart.length} منتجات في سلة الشراء بانتظرك.`);
         localStorage.setItem('cartReminderShown', 'true');
     }
 
@@ -1531,23 +1534,55 @@ document.addEventListener('click', e => {
 
             const shippingCostCheckout = subtotalCheckout >= 300 ? 0 : 30;
 
-            let whatsappMessage = `مرحباً، أود تأكيد طلبي:\n\n*الاسم:* ${name}\n*رقم الهاتف:* ${phone}\n*العنوان:* ${address}\n\n*تفاصيل الطلب:*\n`;
+            let orderDetailsText = "";
             cart.forEach(item => {
-                whatsappMessage += ` - ${item.name_ar} (الكمية: ${item.quantity})`;
+                orderDetailsText += ` - ${item.name_ar} (الكمية: ${item.quantity})`;
                 if (item.color) {
-                    whatsappMessage += ` - اللون: ${item.color}`;
+                    orderDetailsText += ` - اللون: ${item.color}`;
                 }
-                whatsappMessage += ` - السعر: ${item.price.toFixed(2)} درهم\n`;
+                orderDetailsText += ` - السعر: ${item.price.toFixed(2)} درهم\n`;
             });
+
+            const finalTotal = (subtotalCheckout + shippingCostCheckout - discountAmountCheckout);
+            
+            // تم تحديث هذا الرابط
+            const googleSheetURL = 'https://script.google.com/macros/s/AKfycbz_bz5yIeQEKGKkiI1Km-CU2SpPscPQ6pjxe9puvJAu3Lgba5L0L_RNzFUzY-caFH4R/exec';
+
+            fetch(googleSheetURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    address: address,
+                    orderDetails: orderDetailsText,
+                    total: finalTotal.toFixed(2)
+                })
+            }).then(response => {
+                console.log('Data sent to Google Sheet successfully');
+            }).catch(error => {
+                console.error('Error sending data to Google Sheet:', error);
+            });
+
+            let whatsappMessage = `مرحباً، أود تأكيد طلبي:\n\n*الاسم:* ${name}\n*رقم الهاتف:* ${phone}\n*العنوان:* ${address}\n\n*تفاصيل الطلب:*\n`;
+            whatsappMessage += orderDetailsText;
             whatsappMessage += `\n*ملخص الدفع:*\n`;
             whatsappMessage += `المجموع الفرعي: ${subtotalCheckout.toFixed(2)} درهم\n`;
             if (discountAmountCheckout > 0) {
                  whatsappMessage += `الخصم: -${discountAmountCheckout.toFixed(2)} درهم\n`;
             }
             whatsappMessage += `تكلفة الشحن: ${shippingCostCheckout.toFixed(2)} درهم\n`;
-            whatsappMessage += `الإجمالي: ${(subtotalCheckout + shippingCostCheckout - discountAmountCheckout).toFixed(2)} درهم\n\n*طريقة الدفع:* الدفع عند الاستلام`;
+            whatsappMessage += `الإجمالي: ${finalTotal.toFixed(2)} درهم\n\n*طريقة الدفع:* الدفع عند الاستلام`;
             whatsappMessage = encodeURIComponent(whatsappMessage);
             window.open(`https://wa.me/212642163643?text=${whatsappMessage}`, '_blank');
+            
+            cart = [];
+            updateCartCount();
+            saveCart();
+
             break;
         case 'filter':
             activeFilter = filter;
