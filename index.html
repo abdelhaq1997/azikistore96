@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AzikiStore | متجر العطور والساعات الفاخرة</title>
-    <meta name="description" content="أفخم العطور العربية والساعات الأنيقة في AzikiStore - جودة عالية وأسعار تنافسية">
+    <title>AzikiStore | متجر العطور الفاخرة</title>
+    <meta name="description" content="أفخم العطور العربية في AzikiStore - جودة عالية وأسعار تنافسية">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
     <link rel="canonical" href="https://azikistore.com">
-    <meta property="og:title" content="AzikiStore - متجر العطور والساعات الفاخرة">
-    <meta property="og:description" content="أفخم العطور العربية والساعات الأنيقة">
+    <meta property="og:title" content="AzikiStore - متجر العطور الفاخرة">
+    <meta property="og:description" content="أفخم العطور العربية">
     <meta property="og:type" content="website">
-</head>
-<body class="bg-gray-50 text-gray-800 font-montaser">
+    
+    </head>
+<body class="bg-gray-500 text-gray-800 font-montaser">
     <div class="bg-gradient-to-r from-amber-900 to-amber-700 text-white text-center py-3 text-sm font-semibold overflow-hidden">
         <div class="scrolling-text whitespace-nowrap">
             <i class="fas fa-shipping-fast ml-2"></i>
@@ -28,8 +29,11 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <div class="font-serif text-3xl font-bold text-amber-900 logo-text hover:text-amber-700 transition-colors cursor-pointer dark:text-amber-500" data-page="home">
-                        AzikiStore
+                    <div data-page="home" class="flex items-center cursor-pointer">
+                        <img src="./images/logo.png" alt="AzikiStore Logo" class="h-20 w-20 rounded-full ml-2">
+                        <span class="font-serif text-3xl font-bold text-amber-900 logo-text hover:text-amber-700 transition-colors dark:text-amber-500">
+                            AzikiStore
+                        </span>
                     </div>
                 </div>
                 
@@ -99,7 +103,7 @@
         <div id="loading-bar" class="hidden fixed top-0 left-0 right-0 h-1 bg-amber-700 z-50 animate-pulse"></div>
         
         <div id="page-content" class="min-h-screen">
-            </div>
+        </div>
     </main>
 
     <footer class="bg-gradient-to-t from-gray-900 to-gray-800 text-gray-300 py-16 dark:bg-gray-900">
@@ -107,7 +111,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-right">
                 <div class="space-y-4">
                     <h3 class="font-serif text-2xl font-bold text-amber-500 mb-4">AzikiStore</h3>
-                    <p class="text-sm leading-relaxed">أفخم العطور والساعات الشرقية بنكهة عربية أصلية وجودة عالية.</p>
+                    <p class="text-sm leading-relaxed">أفخم العطور الشرقية بنكهة عربية أصلية وجودة عالية.</p>
                     <div class="flex justify-end space-x-4 text-2xl">
                         <a href="https://www.facebook.com/simo.moche.90" target="_blank" rel="noopener noreferrer" class="hover:text-amber-500 transition-colors" aria-label="فيسبوك">
                             <i class="fab fa-facebook"></i>
@@ -171,8 +175,8 @@
     </footer>
     
     <a href="https://wa.me/212642163643?text=السلام عليكم، أرغب في معرفة تفاصيل أكثر عن منتجاتكم في AzikiStore." 
-       class="whatsapp-float fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 hover:scale-110 z-50" 
-       target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب">
+        class="whatsapp-float fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 hover:scale-110 z-50" 
+        target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
     
@@ -204,7 +208,7 @@
         <div class="modal-content bg-white p-8 rounded-xl shadow-2xl max-w-2xl mx-4 transform scale-95 transition-transform duration-300 dark:bg-gray-700 dark:text-white">
             <button id="close-quick-view" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl dark:text-gray-400">&times;</button>
             <div id="quick-view-content" class="md:flex gap-8">
-                </div>
+            </div>
         </div>
     </div>
     
@@ -212,10 +216,26 @@
         <div class="modal-content bg-white p-8 rounded-xl shadow-2xl max-w-4xl mx-4 transform scale-95 transition-transform duration-300 dark:bg-gray-700">
             <button id="close-compare-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl dark:text-gray-400">&times;</button>
             <div id="compare-content">
+            </div>
+        </div>
+    </div>
+
+    <div id="perfume-quiz-modal" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+        <div class="modal-content bg-white p-8 rounded-xl shadow-2xl max-w-lg mx-4 text-center transform scale-95 transition-transform duration-300 dark:bg-gray-800 dark:text-white">
+            <button id="close-quiz-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl dark:text-gray-400">&times;</button>
+            <div id="quiz-content" class="text-right">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 dark:text-white">اكتشف عطرك المثالي!</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">أجب على بعض الأسئلة لنقترح عليك عطراً يناسب شخصيتك.</p>
+                    <button id="start-quiz-btn" class="bg-amber-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-amber-600 transition-colors">ابدأ الاستبيان</button>
                 </div>
+            </div>
         </div>
     </div>
     
+    <audio id="add-to-cart-sound" src="sounds/add-to-cart.mp3" preload="auto"></audio>
+    <audio id="checkout-sound" src="sounds/checkout.mp3" preload="auto"></audio>
+
     <script src="script.js"></script>
 </body>
 </html>
